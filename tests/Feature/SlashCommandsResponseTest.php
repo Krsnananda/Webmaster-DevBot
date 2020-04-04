@@ -13,7 +13,6 @@ class SlashCommandsResponseTest extends TestCase
      */
     public function testGetSlashChannelAllChannels()
     {
-        putenv('SLACK_BOT_TOKEN=xoxb-991511022660-1037911013601-TQLAYIYbODjIZoCElbYBXRXj');
         // Should call SlashCommandsApi@getChannelsListage and get a JSON response with at least one channel
         // Be sure that src-home was listed, since it's the main channel inside workspace
         $dataSent = array(
@@ -56,7 +55,6 @@ class SlashCommandsResponseTest extends TestCase
 
     public function testGetSlashChannelWithFilter()
     {
-        putenv('SLACK_BOT_TOKEN=xoxb-991511022660-1037911013601-TQLAYIYbODjIZoCElbYBXRXj');
         // Should call SlashCommandsApi@getChannelsListage and get a JSON response with at least one channel
         // Be sure that src-home was listed, since it's the main channel inside workspace
         $dataSent = array(
