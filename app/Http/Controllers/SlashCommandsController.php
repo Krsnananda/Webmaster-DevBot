@@ -81,11 +81,12 @@ class SlashCommandsController extends Controller
                 'type' => 'section',
                 'text' =>  array(
                     'type' => 'mrkdwn',
-                    'text' => '✔ Use `/canais` para listar todos os canais\n✔ Use `/canais PALAVRA` para listar todos os canais iniciando com *PALAVRA*'
+                    'text' => ''
                 )
             )
         ];
 
-        return json_encode($resultData, JSON_UNESCAPED_LINE_TERMINATORS | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+//        return json_encode($resultData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return '✔ Use `/canais` para listar todos os canais\n✔ Use `/canais PALAVRA` para listar todos os canais iniciando com *PALAVRA*';
     }
 }
