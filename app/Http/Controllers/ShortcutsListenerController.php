@@ -8,6 +8,6 @@ class ShortcutsListenerController extends Controller
 {
     public function postSlackBotShortcut(Request $request)
     {
-
+        return 404;
     }
 }
