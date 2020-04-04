@@ -17,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::prefix('slash-commands')->group(function() {
-    Route::post('/channel', 'SlashCommandsController@slashChannel')->name('slash-commands.channel');
-});
+//Route::prefix('slash-commands')->group(function() {
+//    Route::post('/channel', 'SlashCommandsController@slashChannel')->name('slash-commands.channel');
+//});
