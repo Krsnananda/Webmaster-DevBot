@@ -43,10 +43,9 @@ class SlashCommandsResponseTest extends TestCase
         );
         $response = $this->post(route('slash-commands.channel'), $dataSent);
 
-        $jsonExpected = '"blocks":[{"type":"section","text":{"type":"mrkdwn","text":"✔ Use `/canais` para listar todos os canais';
+        $jsonExpected = "✔ Use `/canais` para listar todos os canais\n✔ Use `/canais PALAVRA` para listar todos os canais iniciando com *PALAVRA*";
 
         $response->assertOk();
-        $this->assertJson($response->content());
         $this->assertStringContainsStringIgnoringCase($jsonExpected, $response->content());
     }
 
