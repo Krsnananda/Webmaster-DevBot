@@ -43,14 +43,11 @@ class SlashCommandsResponseTest extends TestCase
         );
         $response = $this->post(route('slash-commands.channel'), $dataSent);
 
-        $jsonExpected = json_encode(array(
-            'response_type' => 'ephemeral',
-            'text' => '✔ Use `/canais` para listar todos os canais\n✔ Use `/canais PALAVRA` para listar todos os canais iniciando com *PALAVRA*'
-        ));
+        $jsonExpected = '"blocks":[{"type":"section","text":{"type":"mrkdwn","text":"✔ Use `/canais` para listar todos os canais';
 
         $response->assertOk();
         $this->assertJson($response->content());
-        $this->assertJsonStringEqualsJsonString($jsonExpected, $response->content());
+        $this->assertStringContainsStringIgnoringCase($jsonExpected, $response->content());
     }
 
     public function testGetSlashChannelWithFilter()

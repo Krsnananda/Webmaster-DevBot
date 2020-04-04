@@ -73,9 +73,19 @@ class SlashCommandsController extends Controller
     public function slashChannelHelp()
     {
         $resultData = array();
-        $resultData['response_type'] = 'ephemeral';
-        $resultData['text'] = '✔ Use `/canais` para listar todos os canais\n✔ Use `/canais PALAVRA` para listar todos os canais iniciando com *PALAVRA*';
+//        $resultData['response_type'] = 'ephemeral';
+//        $resultData['text'] = '✔ Use `/canais` para listar todos os canais\n✔ Use `/canais PALAVRA` para listar todos os canais iniciando com *PALAVRA*';
 
-        return json_encode($resultData);
+        $resultData['blocks'] = [
+            array(
+                'type' => 'section',
+                'text' =>  array(
+                    'type' => 'mrkdwn',
+                    'text' => '✔ Use `/canais` para listar todos os canais\n✔ Use `/canais PALAVRA` para listar todos os canais iniciando com *PALAVRA*'
+                )
+            )
+        ];
+
+        return json_encode($resultData, JSON_UNESCAPED_LINE_TERMINATORS | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }
 }
